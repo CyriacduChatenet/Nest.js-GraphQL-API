@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  _id: String!
+
+  """Todo name"""
+  name: String!
+
+  """Todo completed"""
+  completed: String!
+}
+
+type Query {
+  sayHello: String!
+  getAllTodos: [Todo!]!
+  todo(_id: String!): Todo!
+}
+
+type Mutation {
+  createTodo(createTodoInput: CreateTodoInput!): Todo!
+  updateTodo(updateTodoInput: UpdateTodoInput!): Todo!
+  removeTodo(_id: String!): Todo!
+}
+
+input CreateTodoInput {
+  """name of todo"""
+  name: String!
+
+  """completed status of todo"""
+  completed: Boolean!
+}
+
+input UpdateTodoInput {
+  """name of todo"""
+  name: String
+
+  """completed status of todo"""
+  completed: Boolean
+  _id: String!
+}
